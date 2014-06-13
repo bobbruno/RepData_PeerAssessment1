@@ -149,6 +149,8 @@ lapply(nullDays, function(x) {
         weightPerInterv[weightPerInterv$weekDay == weekdays(x),3]))
 })
 ```
+
+And plot the histogram after imputing missing values:
 ```{r imputedStepsHist, fig.width=12, message=FALSE}
 imputedStepsPerDay = ddply(imputedData, .(dateMeasured), summarize, 
                            totalSteps=sum(steps, na.rm=TRUE))
